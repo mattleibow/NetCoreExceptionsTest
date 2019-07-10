@@ -11,7 +11,7 @@ jobs:
       - powershell: .\build.ps1
   - job: build_macos
     pool:
-      vmImage: macos-10.13
+      vmImage: macos-10.14
     steps:
       - bash: sudo $AGENT_HOMEDIRECTORY/scripts/select-xamarin-sdk.sh $(MONO_VERSION)
       - bash: echo '##vso[task.setvariable variable=MD_APPLE_SDK_ROOT;]'/Applications/Xcode_$(XCODE_VERSION).app;sudo xcode-select --switch /Applications/Xcode_$(XCODE_VERSION).app/Contents/Developer
