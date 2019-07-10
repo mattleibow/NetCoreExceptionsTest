@@ -4,7 +4,7 @@ Write-Host "Building native library..."
 if ($IsLinux) {
     make -C native
 } elseif ($IsMacOS) {
-    xcodebuild -project native/nativelibrary/nativelibrary.xcodeproj
+    xcodebuild -project native/nativelibrary.xcodeproj
 } else {
     $vswhere = "${env:ProgramFiles(x86)}\Microsoft Visual Studio\Installer\vswhere.exe"
     $msbuild = & $vswhere -latest -requires Microsoft.Component.MSBuild -find MSBuild\**\Bin\MSBuild.exe | select-object -first 1 
